@@ -1,4 +1,9 @@
-const { capitalize, reverseString, calculator } = require("./quiz");
+const {
+  capitalize,
+  reverseString,
+  calculator,
+  cesarCipher,
+} = require("./quiz");
 
 test("capitalize first letter of a string", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -43,4 +48,15 @@ describe("calculator", () => {
     expect(calculator.divide(-6, -3)).toBe(2);
     expect(() => calculator.divide(6, 0)).toThrow("Division by zero");
   });
+});
+
+test("caesar cipher", () => {
+  expect(cesarCipher("abc", 1)).toBe("bcd");
+  expect(cesarCipher("xyz", 2)).toBe("zab");
+  expect(cesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+  expect(cesarCipher("JavaScript", 5)).toBe("OfzfXfwnuy");
+  expect(cesarCipher("abc", -1)).toBe("zab");
+  expect(cesarCipher("ABC", -2)).toBe("YZA");
+  expect(cesarCipher("Hello, World!", -3)).toBe("Ebiil, Tloia!");
+  expect(cesarCipher("JavaScript", -5)).toBe("EvwuNvmdoq");
 });
