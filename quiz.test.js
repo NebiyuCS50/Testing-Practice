@@ -60,3 +60,12 @@ test("caesar cipher", () => {
   expect(cesarCipher("Hello, World!", -3)).toBe("Ebiil, Tloia!");
   expect(cesarCipher("JavaScript", -5)).toBe("EvwuNvmdoq");
 });
+
+test("analyzeArray", () => {
+  expect(analyzeArray()).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
