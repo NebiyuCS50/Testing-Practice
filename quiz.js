@@ -39,9 +39,7 @@ function cesarCipher(str, num) {
   return newStr;
 }
 function analyzeArray(array) {
-  let aver = array.reduce((previous, current) => {
-    (previous + current) / array.length;
-  });
+  let aver = array.reduce((sum, current) => sum + current, 0) / array.length;
   let min = Math.min(...array);
   let max = Math.max(...array);
   let len = array.length;
