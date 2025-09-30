@@ -3,6 +3,7 @@ const {
   reverseString,
   calculator,
   cesarCipher,
+  analyzeArray,
 } = require("./quiz");
 
 test.only("capitalize first letter of a string", () => {
@@ -61,7 +62,7 @@ test.only("caesar cipher", () => {
   expect(cesarCipher("JavaScript", -5)).toBe("EvqvNxmdko");
 });
 
-test("analyzeArray", () => {
+test.only("analyzeArray", () => {
   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
     average: 4,
     min: 1,
