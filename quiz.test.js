@@ -50,19 +50,19 @@ describe.only("calculator", () => {
   });
 });
 
-test("caesar cipher", () => {
+test.only("caesar cipher", () => {
   expect(cesarCipher("abc", 1)).toBe("bcd");
   expect(cesarCipher("xyz", 2)).toBe("zab");
   expect(cesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
-  expect(cesarCipher("JavaScript", 5)).toBe("OfzfXfwnuy");
+  expect(cesarCipher("JavaScript", 5)).toBe("OfafXhwnuy");
   expect(cesarCipher("abc", -1)).toBe("zab");
   expect(cesarCipher("ABC", -2)).toBe("YZA");
   expect(cesarCipher("Hello, World!", -3)).toBe("Ebiil, Tloia!");
-  expect(cesarCipher("JavaScript", -5)).toBe("EvwuNvmdoq");
+  expect(cesarCipher("JavaScript", -5)).toBe("EvqvNxmdko");
 });
 
 test("analyzeArray", () => {
-  expect(analyzeArray()).toEqual({
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
     average: 4,
     min: 1,
     max: 8,
