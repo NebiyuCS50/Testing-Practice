@@ -5,21 +5,21 @@ const {
   cesarCipher,
 } = require("./quiz");
 
-test("capitalize first letter of a string", () => {
+test.only("capitalize first letter of a string", () => {
   expect(capitalize("hello")).toBe("Hello");
   expect(capitalize("world")).toBe("World");
   expect(capitalize("javaScript")).toBe("JavaScript");
   expect(capitalize("jest")).toBe("Jest");
 });
 
-test("reverse a string", () => {
+test.only("reverse a string", () => {
   expect(reverseString("hello")).toBe("olleh");
   expect(reverseString("world")).toBe("dlrow");
   expect(reverseString("javaScript")).toBe("tpircSavaj");
   expect(reverseString("jest")).toBe("tsej");
 });
 
-describe("calculator", () => {
+describe.only("calculator", () => {
   test("adds two numbers", () => {
     expect(calculator.add(2, 3)).toBe(5);
     expect(calculator.add(-2, 3)).toBe(1);
