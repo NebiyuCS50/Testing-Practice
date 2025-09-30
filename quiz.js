@@ -14,27 +14,49 @@ const calculator = {
     return a / b;
   },
 };
-function caesarCipher(str, num) {
-  const strLower = str.toLowerCase();
-  const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-  const newStr = "";
-  for (let i = 0; i < strLower.length; i++) {
-    let currentStr = strLower[i];
-    if ((currentStr = "")) {
-      newStr = +currentStr;
+function cesarCipher(str, num) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    let lowerChar = char.toLowerCase();
+    let currentIndex = alphabet.indexOf(lowerChar);
+
+    if (currentIndex === -1) {
+      newStr += char;
       continue;
     }
-    let currentIndex = alphabet.indexOf(currentStr);
-    let newIndex = currentIndex + (num % 25);
-    if (newIndex > 25) newIndex = newIndex - 26;
-    if (newIndex < 25) newIndex = newIndex + 26;
-    if (str[i] === str[i].toUpperCase()) {
-      newStr += alphabet[newIndex].toUpperCase();
-    } else {
-      newStr += alphabet[newIndex];
-    }
-    return newStr;
+
+    let newIndex = (currentIndex + num) % 26;
+    if (newIndex < 0) newIndex += 26;
+
+    let cipherChar = alphabet[newIndex];
+    newStr +=
+      char.toUpperCase() === char
+        ? alphabet[newIndex].toUpperCase()
+        : alphabet[newIndex];
   }
+  return newStr;
+}
+function analyzeArray(array) {
+  let aver = array.reduce((previous, current) => {
+    (previous + current) / array.length;
+  });
+  let min = Math.min(...array);
+  let max = Math.max(...array);
+  let len = array.length;
+  return {
+    average: aver,
+    min: min,
+    max: max,
+    length: len,
+  };
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+  cesarCipher,
+  analyzeArray,
+};
