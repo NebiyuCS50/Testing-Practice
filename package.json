@@ -7,6 +7,6 @@
   },
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch ./quiz.js"
+    "watch": "jest --watch *.js"
   }
 }
